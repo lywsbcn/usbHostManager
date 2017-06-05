@@ -6,8 +6,10 @@ ANDROID USB转串口编程
 1：发现设备
 
 /* 发现usb设备*/
+
 private void findUsbList(){
-    usbManager =(UsbManager) getSystemService(USB_SERVICE);
+
+    usbManager =(UsbManager) getSystemService(USB_SERVICE);	
     usbList =usbManager.getDeviceList();
     String SN="14289B3276";
     for (String s : usbList.keySet()){
@@ -27,7 +29,9 @@ private void findUsbList(){
 
 /* 检查权限,和申请授权*/
 
+
 private void checkPermission(){
+
     if(!usbManager.hasPermission(usbDevice)){
         Log.d(TAG, "hasPermission: false");
         usbPermissionReceiver=new UsbPermissionReceiver();
@@ -46,7 +50,9 @@ private void checkPermission(){
 
 这里我们声明一个广播UsbPermissionReceiver,当接收到授权成功的广播后做一些其他的处理:
 
+
 private class UsbPermissionReceiver extends BroadcastReceiver{
+
     @Override
     public void onReceive(Context context, Intent intent) {
         String action=intent.getAction();
@@ -67,11 +73,15 @@ private class UsbPermissionReceiver extends BroadcastReceiver{
 }
 
 接下来，我们要找到具有数据传输功能的接口UsbInterface，从它里边找到数据输入和输出端口UsbEndpoint，一般情况下，一个UsbDevice有多个UsbInterface，我们需要的一般是第一个，但是这里我们要的是第二个，所以：
+
 usbInterface =usbDevice.getInterface(1);
 
 同样的，一个UsbInterface有多个UsbEndpoint，有控制端口和数据端口等等，因此我们需要根据类型和数据流向来找到我们需要的数据输入和输出两个端口：
 
+
+
 private void getUsbPoints(){
+
     usbInterface =usbDevice.getInterface(1);
     for (int i=0;i < usbInterface.getEndpointCount();i++){
         UsbEndpoint p=usbInterface.getEndpoint(i);
@@ -87,6 +97,7 @@ private void getUsbPoints(){
     connection.controlTransfer(0x21, 0x09, 0x200, 0,null, 0, 0);
     threadGetData();
 }
+
 
 最后,才是真正的打开usb设备,我们需要和外设建立一个UsbDeviceConnection，它的获取也很简单，就一句代码：
 
@@ -105,7 +116,9 @@ bulkTransfer这个函数用于在给定的端口进行数据传输，第一个�
 2）	接收usb外设发送来的数据
 同理，我们已经找到了数据输入端口 UsbEndpointIn，因为数据的输入是不定时的，因此我们可以另开一个线程，来专门接收数据：
 
+
 private void threadGetData(){
+
     thread =new Thread(){
         @Override
         public void run() {
@@ -118,7 +131,9 @@ private void threadGetData(){
 
 接收数据的代码如下：
 
+
 private void getUsbData(){
+
         int inMax = usbEndpointIn.getMaxPacketSize();
         ByteBuffer byteBuffer = ByteBuffer.allocate(inMax);
         UsbRequest usbRequest = new UsbRequest();
