@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scheme value='1'>
+    <card value='0'  card="D0 A" />
+    <card value='1'  card="D0 2" />
+    <card value='2'  card="D0 3" />
+    <card value='3'  card="D0 4" />
+    <card value='4'  card="D0 5" />
+    <card value='5'  card="D0 6" />
+    <card value='6'  card="D0 7" />
+    <card value='7'  card="D0 8" />
+    <card value='8'  card="D0 9" />
+    <card value='9'  card="D1 0" />
+    <card value='10' card="D1 J" />
+    <card value='11' card="D1 Q" />
+    <card value='12' card="D1 K" />
+
+    <card value='13' card="E0 A" />
+    <card value='14' card="E0 2" />
+    <card value='15' card="E0 3" />
+    <card value='16' card="E0 4" />
+    <card value='17' card="E0 5" />
+    <card value='18' card="E0 6" />
+    <card value='19' card="E0 7" />
+    <card value='20' card="E0 8" />
+    <card value='21' card="E0 9" />
+    <card value='22' card="E1 0" />
+    <card value='23' card="E0 J" />
+    <card value='24' card="E0 Q" />
+    <card value='25' card="E0 K" />
+
+    <card value='26' card="F0 A" />
+    <card value='27' card="F0 2" />
+    <card value='28' card="F0 3" />
+    <card value='29' card="F0 4" />
+    <card value='30' card="F0 5" />
+    <card value='31' card="F0 6" />
+    <card value='32' card="F0 7" />
+    <card value='33' card="F0 8" />
+    <card value='34' card="F0 9" />
+    <card value='35' card="F1 0" />
+    <card value='36' card="F0 J" />
+    <card value='37' card="F0 Q" />
+    <card value='38' card="F0 K" />
+
+    <card value='39' card="G0 A" />
+    <card value='40' card="G0 2" />
+    <card value='41' card="G0 3" />
+    <card value='42' card="G0 4" />
+    <card value='43' card="G0 5" />
+    <card value='44' card="G0 6" />
+    <card value='45' card="G0 7" />
+    <card value='46' card="G0 8" />
+    <card value='47' card="G0 9" />
+    <card value='48' card="G1 0" />
+    <card value='49' card="G0 J" />
+    <card value='50' card="G0 Q" />
+    <card value='51' card="G0 K" />
+
+</scheme>
